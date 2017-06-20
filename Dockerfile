@@ -14,4 +14,4 @@ RUN unzip /tmp/lynis-converter-dist/master.zip -d /opt
 RUN cd /opt/lynis-report-converter-master/ && perl Makefile.PL && make && make install
 RUN apt-get autoremove -y && rm -rf /tmp/*
 
-CMD printf 'Congratulations, container is successfully started! Now you need to open the new terminal and run a two more commands:\n1) docker cp /var/log/lynis-report.dat lynis_converter:/var/log/lynis-report.dat\n2) docker exec lynis_converter ./opt/lynis-report-converter-master/lynis-report-converter.pl -j >> lynis-report.json' && tail -f /var/log/wtmp
+CMD printf 'Lynis converter is successfully started' && tail -f /var/log/wtmp
