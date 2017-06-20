@@ -14,4 +14,4 @@ RUN unzip /tmp/lynis-converter-dist/master.zip -d /opt
 RUN cd /opt/lynis-report-converter-master/ && perl Makefile.PL && make && make install
 RUN apt-get autoremove -y && rm -rf /tmp/*
 
-CMD printf 'Lynis converter is successfully started' && tail -f /var/log/wtmp
+CMD printf 'Lynis report converter is started' && tail -f /var/log/wtmp
